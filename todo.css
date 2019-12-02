@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Raleway;
+    background-color: #c9d2f3;
+    padding: .5rem;
+}
+h1 {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 300;
+    color: #1465e7
+}
+h1 span{
+    font-weight: 700;
+}
+h2 {
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+form {
+    padding-top: .5rem;
+}
+input {
+    margin-left: .5rem;
+    vertical-align: baseline;
+}
+#hideCompleted {
+    margin-right: .25rem;
+    vertical-align: baseline;
+}
+#text {
+    margin-top:30px;
+}
+#todos {
+    margin: .5rem 0;
+    padding: .25rem 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+button {
+    height: 20px; 
+    vertical-align: baseline;
+}
+.todo-chk {
+    margin-right: .25rem;
+}
+.delete-btn {
+    float:right;
+}
+.todo-div:nth-child(even){
+    background-color: #b5c2ee;
+}
+.footer {
+    text-align: center;
+    font-size: smaller;
+    margin-top: 2rem;
+}
