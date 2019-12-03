@@ -13,7 +13,7 @@ const filters = {
 renderTodos(todos, filters) 
 
 //hide completed
-document.querySelector('#hideCompleted').addEventListener('change', function(e) {
+document.querySelector('#hideCompleted').addEventListener('change', (e) => {
     filters.hideCompleted = e.target.checked
     renderTodos(todos, filters)
 })
@@ -21,13 +21,13 @@ document.querySelector('#hideCompleted').addEventListener('change', function(e) 
 //Read - Initial Todo render
 renderTodos(todos, filters)
 //Read - filter applied
-document.querySelector('#search-text').addEventListener('input', function(e) {
+document.querySelector('#search-text').addEventListener('input', (e) => {
     filters.searchText = e.target.value
     renderTodos(todos,filters)
 })
 
 //Create
-document.querySelector('#new-todos').addEventListener('submit', function(e) {
+document.querySelector('#new-todos').addEventListener('submit', (e) => {
     e.preventDefault()
     const text = e.target.elements.addTodo.value
     todos.push({
