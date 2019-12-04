@@ -1,4 +1,7 @@
+'use strict'
+
 const todos = getSavedTodos()
+//Object template
 // const todos = [{
 //     id: uuidv4(),
 //     text: 'Clean house',

@@ -1,11 +1,18 @@
+'use strict'
+
 //check for existing todos in local storage
 const getSavedTodos = () => {
     const todosJSON = localStorage.getItem('todos')
-    if(todosJSON !== null) {
-        return JSON.parse(todosJSON)
-    } else {
+    // if(todosJSON !== null) {
+    //     return JSON.parse(todosJSON)
+    // } else {
+    //     return []
+    // }
+    try {
+        return todosJSON ? JSON.parse(todosJSON) : []
+    } catch(err) {
         return []
-    }
+    }    
 }
 
 //save the todos to LS
@@ -19,6 +26,20 @@ const removeTodo = (id) => {
     if(todoIndex > -1) {
         todos.splice(todoIndex, 1)
     }
+}
+
+//toggle checkbox
+const toggleTodo = (id) => {
+    //class solution
+    //const todo = todos.find((todo) => todo.id === id)
+    // if(todo) {
+    //     todo.completed = !todo.completed
+    // }
+    //alt solution - ok
+    const todoIndex = todos.findIndex((todo) => todo.id === id)
+    if(todoIndex > -1) {
+        todos[todoIndex].completed = !todos[todoIndex].completed
+    }   
 }
 
 //render todos
@@ -43,7 +64,7 @@ const renderTodos = function(todos, filters) {
     document.querySelector('#todos').innerHTML=''
     document.querySelector('#h2').innerHTML=''
     document.querySelector('#h2').appendChild(generateSummaryDOM(incompleteTodos))
-    if(todos.length>0){ 
+    if(todos.length) { 
         filteredTodos.forEach((todo) => {
             document.querySelector('#todos').appendChild(generateTodoDOM(todo))
         })
@@ -52,14 +73,6 @@ const renderTodos = function(todos, filters) {
         noElem.textContent = 'All finished. Add some more todos!'
         document.querySelector('#todos').appendChild(noElem)
     }
-}
-
-//toggle checkbox
-const toggleTodo = (id) => {
-    const todoIndex = todos.findIndex((todo) => todo.id === id)
-    if(todoIndex > -1) {
-        todos[todoIndex].completed = !todos[todoIndex].completed
-    }   
 }
 
 //generate todo DOM
