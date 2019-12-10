@@ -4,7 +4,7 @@
 }
 body {
     font-family: Raleway;
-    background-color: #c9d2f3;
+    background-color: white;
 }
 header {
     text-align: center;
@@ -12,6 +12,11 @@ header {
     padding: 1rem 0;
     background-color: #1465e7;
     width: 100%;
+}
+.actions {
+    background-color: #90a5ec;
+    padding: .5rem 0 .9rem 0;
+    height: 2rem;
 }
 h1 {
     margin-top: 1rem;
@@ -44,15 +49,10 @@ input {
 #text {
     margin-top:30px;
 }
-#todos {
-    margin: .5rem;
-    padding: .25rem 0;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
 button {
     height: 20px; 
     vertical-align: baseline;
+    margin: 0 .25rem;
 }
 .todo-chk {
     margin-right: .25rem;
@@ -60,8 +60,14 @@ button {
 .delete-btn {
     float:right;
 }
+.todo-div {
+    padding: .25rem;
+}
 .todo-div:nth-child(even){
-    background-color: #b5c2ee;
+    background-color: #e7ebf8;
+}
+.todo-div:nth-child(odd){
+    background-color: #c9d2f3;
 }
 .footer {
     text-align: center;

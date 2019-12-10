@@ -13,14 +13,14 @@
         <h1 id="title">Todo<span>App</span></h1>
         <div id="h2"></div>
     </header>
-    <div class="content">
-        <label for="hideCompleted"><input id="hideCompleted" type="checkbox" />Hide completed</label>    
-        <input type="text" id="search-text" placeholder="Filter todos..." />
-        <div id="todos"><!-- Todos generated here--></div>
+    <div class="actions">
         <form id="new-todos">
             <input type="text" id="addTodo" placeholder="Add a new todo" /><button>Submit</button>
+            <input type="text" id="search-text" placeholder="Filter todos..." />
+            <label for="hideCompleted"><input id="hideCompleted" type="checkbox" />Hide completed</label>    
         </form>
     </div>
+    <div id="todos"><!-- Todos generated here--></div>
     <p class="footer">This application was created by John Chase</p>    
     <script src="uuid.js"></script>
     <script src="todo-funcs.js"></script>
