@@ -1,0 +1,38 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev-server": "webpack-dev-server --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-chase/jsbootcamp-todo-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/john-chase/jsbootcamp-todo-app/issues"
+  },
+  "homepage": "https://github.com/john-chase/jsbootcamp-todo-app#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.7.3",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "live-server": "^1.2.1",
+    "postcss-loader": "^3.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "moment": "^2.24.0",
+    "moment-locales-webpack-plugin": "^1.1.2",
+    "uuid": "^3.2.1"
+  }
+}
