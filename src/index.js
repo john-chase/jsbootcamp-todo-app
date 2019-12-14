@@ -2,6 +2,7 @@ import uuidv4 from 'uuid/v4'
 import {createTodo, loadTodos} from './todos'
 import {renderTodos} from './views'
 import {setFilters} from './filters'
+import './styles/app.css'
 
 //Object template
 // const todos = [{
