@@ -1,5 +1,5 @@
 const path = require('path')
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 module.exports = {
@@ -12,6 +12,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     plugins: [
+        new ExtractTextPlugin({filename:'../styles/bundle.css'}),        
         new MomentLocalesPlugin(),
         new MomentLocalesPlugin({
             localesToKeep: ['es-us'],
@@ -19,31 +20,30 @@ module.exports = {
     ],
     module: {
         rules: 
-        [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: ['env']
+        [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
+                    }
                 }
-            }
-        }, {
-        //     test: /\.scss$/,
-        //     exclude: /node_modules/, 
-        //     use: [
-        //         'style-loader', 'css-loader', 'postcss-loader', 'sass-loader'
-        //     ]
-        // }, { 
-            test: /\.css$/, 
-            use: [
-                'style-loader', 'css-loader'
-            ] 
-        }]
+            }, {
+                test:/\.css$/,
+                exclude: /node_modules/,                
+                use: ExtractTextPlugin.extract({ 
+                    fallback:'style-loader',
+                    use:['css-loader'],
+                })
+            },
+        ]
     },
     devServer: {
         contentBase: path.resolve(__dirname, 'public'),
         publicPath: '/scripts/'
     },
+    watch:true,
     devtool: 'source-map'
 }
